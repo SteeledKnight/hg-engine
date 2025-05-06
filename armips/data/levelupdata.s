@@ -188,6 +188,7 @@ levelup SPECIES_WARTORTLE
     learnset MOVE_RAIN_DANCE, 34
     learnset MOVE_SHELL_SMASH, 35
     learnset MOVE_IRON_DEFENSE, 40
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_SKULL_BASH, 43
     learnset MOVE_HYDRO_PUMP, 46
     terminatelearnset
@@ -211,6 +212,7 @@ levelup SPECIES_BLASTOISE
     learnset MOVE_AQUA_TAIL, 31
     learnset MOVE_SHELL_SMASH, 35
     learnset MOVE_RAIN_DANCE, 38
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_IRON_DEFENSE, 44
     learnset MOVE_SKULL_BASH, 48
     learnset MOVE_HYDRO_PUMP, 54
@@ -440,6 +442,7 @@ levelup SPECIES_EKANS
     learnset MOVE_GASTRO_ACID, 36
     learnset MOVE_BELCH, 38
     learnset MOVE_HAZE, 41
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_COIL, 44
     learnset MOVE_GUNK_SHOT, 49
     terminatelearnset
@@ -465,6 +468,7 @@ levelup SPECIES_ARBOK
     learnset MOVE_SPIT_UP, 27
     learnset MOVE_ACID_SPRAY, 32
     learnset MOVE_MUD_BOMB, 39
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_GASTRO_ACID, 44
     learnset MOVE_BELCH, 48
     learnset MOVE_HAZE, 51
@@ -637,6 +641,7 @@ levelup SPECIES_NIDOQUEEN
     learnset MOVE_TAIL_WHIP, 1
     learnset MOVE_CHIP_AWAY, 23
     learnset MOVE_BODY_SLAM, 35
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_EARTH_POWER, 43
     learnset MOVE_SUPERPOWER, 58
     terminatelearnset
@@ -892,6 +897,7 @@ levelup SPECIES_ZUBAT
     learnset MOVE_CONFUSE_RAY, 31
     learnset MOVE_HAZE, 35
     learnset MOVE_VENOSHOCK, 38
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_LEECH_LIFE, 43
     learnset MOVE_AIR_SLASH, 45
     terminatelearnset
@@ -915,6 +921,7 @@ levelup SPECIES_GOLBAT
     learnset MOVE_QUICK_GUARD, 34
     learnset MOVE_CONFUSE_RAY, 37
     learnset MOVE_HAZE, 40
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_VENOSHOCK, 45
     learnset MOVE_LEECH_LIFE, 53
     learnset MOVE_AIR_SLASH, 55
@@ -1129,6 +1136,7 @@ levelup SPECIES_MEOWTH
     learnset MOVE_ASSURANCE, 31
     learnset MOVE_SLASH, 34
     learnset MOVE_NASTY_PLOT, 39
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_PLAY_ROUGH, 44
     learnset MOVE_CAPTIVATE, 46
     learnset MOVE_NIGHT_SLASH, 49
@@ -1157,6 +1165,7 @@ levelup SPECIES_PERSIAN
     learnset MOVE_POWER_GEM, 32
     learnset MOVE_ASSURANCE, 35
     learnset MOVE_SLASH, 39
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_NASTY_PLOT, 46
     learnset MOVE_PLAY_ROUGH, 54
     learnset MOVE_CAPTIVATE, 56
@@ -3026,6 +3035,7 @@ levelup SPECIES_EEVEE
     learnset MOVE_TAKE_DOWN, 33
     learnset MOVE_BATON_PASS, 34
     learnset MOVE_CHARM, 37
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_DOUBLE_EDGE, 43
     learnset MOVE_TRUMP_CARD, 45
     learnset MOVE_LAST_RESORT, 48
@@ -3861,6 +3871,7 @@ levelup SPECIES_CROBAT
     learnset MOVE_QUICK_GUARD, 34
     learnset MOVE_CONFUSE_RAY, 37
     learnset MOVE_HAZE, 40
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_VENOSHOCK, 45
     learnset MOVE_LEECH_LIFE, 53
     learnset MOVE_AIR_SLASH, 55
@@ -4519,6 +4530,7 @@ levelup SPECIES_UMBREON
     learnset MOVE_SCREECH, 37
     learnset MOVE_GUARD_SWAP, 39
     learnset MOVE_DARK_PULSE, 40
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_MEAN_LOOK, 43
     learnset MOVE_LAST_RESORT, 48
     terminatelearnset

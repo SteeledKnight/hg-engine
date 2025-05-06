@@ -1,11 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define GEN_LATEST 9
+#define GEN_LATEST 4
 
 // FAIRY_TYPE_IMPLEMENTED should be used if you want to implement the fairy type and overwrite type 9 in this project
 // set FAIRY_TYPE_IMPLEMENTED to 0 if you do not want this to happen
-#define FAIRY_TYPE_IMPLEMENTED 1
+#define FAIRY_TYPE_IMPLEMENTED 0
 
 // START_ADDRESS should be the same as armips/include/config.h's START_ADDRESS so that hall of fame/pokéathlon overworlds work properly.
 // START_ADDRESS defines the file address within the synthetic overlay where you would like to place all of the code that this project uses.  this is largely the repointed tables that the code uses.
@@ -22,22 +22,22 @@
 
 // EXPERIENCE_FORMULA_GEN defines the experience formula you would like to use.  Gens 5, 7, and 8 consider the difference between the attacker's level and the fainted's level to scale the experience gained.
 // i.e. defining this as "5", "7", or "8" would use a scaled formula, whereas "6" and others would use the default formula.  There is a multiplier of 255 / 390 to not artificially inflate the experience given as well with higher base experience.
-#define EXPERIENCE_FORMULA_GEN 8
+#define EXPERIENCE_FORMULA_GEN 4
 
 // HIDDEN_ABILITIES defines whether or not Pokémon with their hidden ability bit set will receive their hidden abilities when being generated/changing form in battle.
 // commenting this line out essentially disables hidden abilities to maintain default behavior, while leaving this as-is will introduce hidden abilities and all of their handling.
 // just need to set the HIDDEN_ABILITIES_FLAG from the save and then every mon should be generated with its hidden ability until the flag is cleared from another script
-#define HIDDEN_ABILITIES
-#define HIDDEN_ABILITIES_FLAG 2600
-#define HIDDEN_ABILITIES_STARTERS_FLAG 2601
+//#define HIDDEN_ABILITIES
+//#define HIDDEN_ABILITIES_FLAG 2600
+//#define HIDDEN_ABILITIES_STARTERS_FLAG 2601
 
 // MEGA_EVOLUTIONS defines whether or not Pokémon that are able to mega evolve will be able to do so.
 // commenting this line out essentially disables mega evolutions and maintains default behavior with respect to them.  leaving this as-is will introduce mega evolutions when applied to the game.
-#define MEGA_EVOLUTIONS
+//#define MEGA_EVOLUTIONS
 
 // PRIMAL_REVERSION defines whether or not Kyogre and Groudon, when holding their orbs, will be able to change form when sent out in battle.
 // commenting this line out essentially disables primal reversion.  leaving this as-is will introduce primal reversions when applied to the game.
-#define PRIMAL_REVERSION
+//#define PRIMAL_REVERSION
 
 // ITEM_POCKET_EXPANSION defines whether or not item pockets will be given extra slots in the save in order to provide space for new items that are implemented
 // commenting this line out will prevent the item pockets from being expanded for the new items
@@ -57,7 +57,7 @@
 
 // IMPLEMENT_CAPTURE_EXPERIENCE defines whether or not capturing wild pokemon will net experience
 // commenting this line out disables capture experience
-#define IMPLEMENT_CAPTURE_EXPERIENCE
+//#define IMPLEMENT_CAPTURE_EXPERIENCE
 
 // IMPLEMENT_CRITICAL_CAPTURE defines whether or not throwing a poké ball has a certain percent chance of a guaranteed capture called a critical throw
 // commenting this line out disables critical captures
@@ -74,20 +74,20 @@
 // uncommenting IMPLEMENT_LEVEL_CAP enables the level cap system.  undefining LEVEL_CAP_VARIABLE will just cause compilation errors
 // uncommenting UNCAP_CANDIES_FROM_LEVEL_CAP will allow for rare candies to not be capped by the level cap even with the level cap in place, like run & bun
 //#define IMPLEMENT_LEVEL_CAP
-#define LEVEL_CAP_VARIABLE 0x416F
+//#define LEVEL_CAP_VARIABLE 0x416F
 //#define UNCAP_CANDIES_FROM_LEVEL_CAP
 
 // UPDATE_OVERWORLD_POISON will remove overworld poison if enabled
 // comment the line out below to retain overworld poison
-#define UPDATE_OVERWORLD_POISON
+//#define UPDATE_OVERWORLD_POISON
 
 // DISABLE_END_OF_TURN_WEATHER_MESSAGE removes the weather messages at the end of the turn.  instead the bottom screen icon can be used
 // uncomment the line out to get this functionality
-//#define DISABLE_END_OF_TURN_WEATHER_MESSAGE
+#define DISABLE_END_OF_TURN_WEATHER_MESSAGE
 
 // IMPLEMENT_SEASONS currently implements season mechanics. Used for changing forms of Deerling and Sawsbuck.
 // Comment the line out to disable this functionality (Gen 6+) 
-#define IMPLEMENT_SEASONS
+//#define IMPLEMENT_SEASONS
 
 // IMPLEMENT_DYNAMIC_WILD_SPECIES_FORMS allows wild species to appear with different forms if it has multiple forms.
 // Normally you will use monwithform, encounterwithform, headbuttencounterwithform to specify different forms (similar to Gen 5+)
@@ -95,7 +95,7 @@
 // #define IMPLEMENT_DYNAMIC_WILD_SPECIES_FORMS
 
 // Some forms only exist in their debut games, with accompying mechanics. IMPLEMENT_GONE_SPECIES_MECHANICS lets these forms' mechanics coexist with the latest mechanics. Examples include Noble Pokémon
-#define IMPLEMENT_DEXIT_FORMS_MECHANICS
+//#define IMPLEMENT_DEXIT_FORMS_MECHANICS
 
 // EXPAND_PC_BOXES will expand the amount of pc boxes if enabled to 30
 // comment out the line below to keep the max at 18
@@ -111,14 +111,14 @@
 
 // FRIENDSHIP_EVOLUTION_THRESHOLD defines the amount of friendship needed to evolve mons with friendship-related evolutions
 // modern generations have this value at 160, older ones at 220.  still max out at 255
-#define FRIENDSHIP_EVOLUTION_THRESHOLD 160
+#define FRIENDSHIP_EVOLUTION_THRESHOLD 220
 
 // RESTORE_ITEMS_AT_BATTLE_END will restore held items that are single-use at the end of battle (Gen 9)
 // comment out the line below to revert back to Gen 8- behavior
-#define RESTORE_ITEMS_AT_BATTLE_END
+//#define RESTORE_ITEMS_AT_BATTLE_END
 
 // AI_CAN_GRAB_ITEMS allows to use Trick, Switcheroo, (Thief still todo) on the Player and actually grab items. This can result in lost items.
-#define AI_CAN_GRAB_ITEMS
+//#define AI_CAN_GRAB_ITEMS
 
 // PROTEAN_GENERATION defines the behavior that Protean should exhibit, where it either changes type every move (<=8) or changes type once per appearance in battle (>=9)
 #define PROTEAN_GENERATION GEN_LATEST
@@ -137,7 +137,7 @@
 #define IMPLEMENT_REUSABLE_REPELS
 
 // UPDATE_VITAMIN_EV_CAPS changes the cap on the vitamins from 100 to 252 per recent generations
-#define UPDATE_VITAMIN_EV_CAPS
+//#define UPDATE_VITAMIN_EV_CAPS
 
 // DISABLE_ITEMS_IN_TRAINER_BATTLE will disable the usage of items in trainer battles. This is also true for the AI.
 //#define DISABLE_ITEMS_IN_TRAINER_BATTLE

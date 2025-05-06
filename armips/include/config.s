@@ -1,6 +1,6 @@
 // all of the current configurations for this project.  each is explained in a comment.
 
-GEN_LATEST equ 9
+GEN_LATEST equ 4
 
 // START_ADDRESS defines the file address within the synthetic overlay where you would like to place all of the code that this project uses.  this is largely the repointed tables that the code uses.
 // if START_ADDRESS is 0x10000, then the tables will be inserted at address 0x10000 of the synthetic overlay
@@ -9,7 +9,7 @@ START_ADDRESS equ 0x0
 
 // FAIRY_TYPE_IMPLEMENTED defines whether or not the fairy type is to be implemented as type 9 or not.
 // if you do not want this change, then set it to 0
-FAIRY_TYPE_IMPLEMENTED equ 1
+FAIRY_TYPE_IMPLEMENTED equ 0
 
 // SNOW_WARNING_GENERATION controls whether to summon Snow or Hail when the ability is activated.
 // 9 or above: Snow
@@ -45,7 +45,7 @@ FAST_TEXT_PRINTING equ 0
 REUSABLE_TMS equ 1
 
 // DELETABLE_HMS Allows HMs to be forgotten, this also makes their quantity reduce, but the infinite TMs change prevents this.
-DELETABLE_HMS equ 0
+DELETABLE_HMS equ 1
 
 // APPLY_ANTIPIRACY will apply the typical anti-piracy code changes to your ROM automatically so that the game runs well on hardware (TWLmenu and R4 are both tested)
 // comment out the lines if you do not want anti-piracy to be applied to your ROM

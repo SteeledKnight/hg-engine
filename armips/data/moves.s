@@ -251,10 +251,10 @@ movedata MOVE_SWORDS_DANCE, "Swords Dance"
     movedescription MOVE_SWORDS_DANCE, "A frenetic dance to\nuplift the fighting\nspirit. It sharply\nraises the user’s\nAttack stat."
 
 movedata MOVE_CUT, "Cut"
-    battleeffect MOVE_EFFECT_HIT
+    battleeffect MOVE_EFFECT_HIGH_CRITICAL
     pss SPLIT_PHYSICAL
-    basepower 50
-    type TYPE_NORMAL
+    basepower 55
+    type TYPE_BUG
     accuracy 95
     pp 30
     effectchance 0
