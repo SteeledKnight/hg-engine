@@ -4948,13 +4948,6 @@ mondata SPECIES_STANTLER, "Stantler"
     mondexheight SPECIES_STANTLER, "4’07”"
     mondexweight SPECIES_STANTLER, "157.0 lbs."
 
-    runchance 0
-    colorflip BODY_COLOR_BROWN, 0
-    mondexentry SPECIES_STANTLER, "The curved antlers subtly change\nthe flow of air to create a strange\nspace where reality is distorted."
-    mondexclassification SPECIES_STANTLER, "Big Horn Pokémon"
-    mondexheight SPECIES_STANTLER, "4’07”"
-    mondexweight SPECIES_STANTLER, "157.0 lbs."
-
 
 mondata SPECIES_SMEARGLE, "Smeargle"
     basestats 55, 20, 35, 75, 20, 45
