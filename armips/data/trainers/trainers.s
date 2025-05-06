@@ -13964,7 +13964,7 @@ trainerdata 412, "Eli"
         ivs 0
         abilityslot 0
         level 40
-        pokemon SPECIES_EXEGGCUTOR
+        pokemon SPECIES_EXEGGUTOR
         ballseal 0
 
         // mon 2
