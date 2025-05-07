@@ -15,7 +15,7 @@
 
 // ALLOW_SAVE_CHANGES will allow save file field expansions for full feature implementation, but will break compatibility with PKHeX
 // commenting out this define will disable kyurem's forme change method and keep saves compatible with pkhex
-#define ALLOW_SAVE_CHANGES
+//#define ALLOW_SAVE_CHANGES
 
 // CRY_PSEUDOBANK_START defines the first pseudobank to be used as cries in the sdat.  cries are loaded differently to save on RAM space
 #define CRY_PSEUDOBANK_START 778
@@ -41,11 +41,11 @@
 
 // ITEM_POCKET_EXPANSION defines whether or not item pockets will be given extra slots in the save in order to provide space for new items that are implemented
 // commenting this line out will prevent the item pockets from being expanded for the new items
-#define ITEM_POCKET_EXPANSION
+//#define ITEM_POCKET_EXPANSION
 
 // IMPLEMENT_BDHCAM_ROUTINE defines whether or not the BDHCam routine (by Mikelan) will be built into the ROM.  this is necessary to get it shiftable because DSPRE writes it to a fixed location
 // uncommenting this line will include it in your ROM
-#define IMPLEMENT_BDHCAM_ROUTINE
+//#define IMPLEMENT_BDHCAM_ROUTINE
 
 // IMPLEMENT_TRANSPARENT_TEXTBOXES should be used if you want to implement transparent textboxes
 // uncommenting this line out will enable transparent textboxes
@@ -99,7 +99,7 @@
 
 // EXPAND_PC_BOXES will expand the amount of pc boxes if enabled to 30
 // comment out the line below to keep the max at 18
-#define EXPAND_PC_BOXES
+//#define EXPAND_PC_BOXES
 
 // SHINY_ODDS are the odds that a pokémon will be shiny.  actual odds are SHINY_ODDS over 65,536, by default 8 / 65536 or 1 / 8192
 // note that changing this still has no chance of spawning shiny mons in for trainers like the tutorial's method does
