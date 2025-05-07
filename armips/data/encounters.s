@@ -120,7 +120,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 2, 3, 2, 3, 3, 3, 2, 2, 4, 4, 4, 4
+walklevels 2, 3, 2, 3, 3, 3, 2, 2, 3, 3, 3, 3
 
 // morning encounter slots
 pokemon SPECIES_PIDGEY
@@ -6256,7 +6256,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 21, 22, 21, 22, 22, 22, 23, 23, 22, 22, 22, 22
+walklevels 24, 25, 24, 25, 25, 25, 26, 26, 25, 25, 25, 25
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6360,7 +6360,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 21, 22, 21, 22, 22, 22, 23, 23, 22, 22, 22, 22
+walklevels 24, 25, 24, 25, 25, 25, 26, 26, 25, 25, 25, 25
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6464,7 +6464,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 22, 23, 22, 23, 23, 23, 24, 24, 23, 23, 23, 23
+walklevels 25, 26, 25, 26, 26, 26, 27, 27, 26, 26, 26, 26
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6568,7 +6568,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 22, 23, 22, 23, 23, 23, 24, 24, 23, 23, 23, 23
+walklevels 25, 26, 25, 26, 26, 26, 27, 27, 26, 26, 26, 26
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
