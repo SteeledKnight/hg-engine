@@ -959,7 +959,7 @@ movedata MOVE_BLIZZARD, "Blizzard"
     pss SPLIT_SPECIAL
     basepower 110
     type TYPE_ICE
-    accuracy 70
+    accuracy 75
     pp 5
     effectchance 10
     target RANGE_ADJACENT_OPPONENTS
@@ -1535,7 +1535,7 @@ movedata MOVE_HYPNOSIS, "Hypnosis"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
-    accuracy 60
+    accuracy 70
     pp 20
     effectchance 0
     target RANGE_SINGLE_TARGET
@@ -2269,7 +2269,7 @@ movedata MOVE_BARRAGE, "Barrage"
 movedata MOVE_LEECH_LIFE, "Leech Life"
     battleeffect MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 40
     type TYPE_BUG
     accuracy 100
     pp 10
@@ -4061,7 +4061,7 @@ movedata MOVE_FAKE_OUT, "Fake Out"
 movedata MOVE_UPROAR, "Uproar"
     battleeffect MOVE_EFFECT_UPROAR
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 50
     type TYPE_NORMAL
     accuracy 100
     pp 10
@@ -5501,7 +5501,7 @@ movedata MOVE_POISON_TAIL, "Poison Tail"
 movedata MOVE_COVET, "Covet"
     battleeffect MOVE_EFFECT_STEAL_HELD_ITEM
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 40
     type TYPE_NORMAL
     accuracy 100
     pp 25
