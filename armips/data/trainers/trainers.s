@@ -959,7 +959,7 @@ trainerdata 30, "Whitney"
         // mon 0
         ivs 100
         abilityslot 0
-        level 17
+        level 20
         pokemon SPECIES_CLEFAIRY
         item ITEM_NONE
         move MOVE_DOUBLE_SLAP
@@ -971,7 +971,7 @@ trainerdata 30, "Whitney"
         // mon 1
         ivs 100
         abilityslot 32
-        level 19
+        level 21
         pokemon SPECIES_MILTANK
         item ITEM_LUM_BERRY
         move MOVE_ROLLOUT
@@ -983,7 +983,7 @@ trainerdata 30, "Whitney"
         // mon 2
         ivs 100
         abilityslot 0
-        level 17
+        level 20
         pokemon SPECIES_TEDDIURSA
         item ITEM_NONE
         move MOVE_FEINT_ATTACK
@@ -1809,7 +1809,7 @@ trainerdata 53, "Jin"
         // mon 0
         ivs 0
         abilityslot 0
-        level 6
+        level 5
         pokemon SPECIES_GASTLY
         ballseal 0
     endparty
@@ -3951,6 +3951,10 @@ trainerdata 119, "Fran"
         abilityslot 32
         level 38
         pokemon SPECIES_SEADRA
+        move MOVE_TWISTER
+        move MOVE_BRINE
+        move MOVE_FOCUS_ENERGY
+        move MOVE_AGILITY
         ballseal 0
 
         // mon 0
@@ -3958,6 +3962,10 @@ trainerdata 119, "Fran"
         abilityslot 32
         level 38
         pokemon SPECIES_ONIX
+        move MOVE_SLAM
+        move MOVE_CURSE
+        move MOVE_DRAGON_BREATH
+        move MOVE_ROCK_TOMB
         ballseal 0
     endparty
 
