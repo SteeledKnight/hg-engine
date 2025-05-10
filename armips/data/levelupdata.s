@@ -168,6 +168,7 @@ levelup SPECIES_BLASTOISE
     learnset MOVE_WATER_PULSE, 28
     learnset MOVE_AQUA_TAIL, 32
     learnset MOVE_SKULL_BASH, 39
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_RAIN_DANCE, 53
     learnset MOVE_HYDRO_PUMP, 60
     terminatelearnset
@@ -614,6 +615,7 @@ levelup SPECIES_ZUBAT
     learnset MOVE_POISON_FANG, 33
     learnset MOVE_HAZE, 37
     learnset MOVE_AIR_SLASH, 41
+    learnset MOVE_CRUNCH, 42
     terminatelearnset
 
 levelup SPECIES_GOLBAT
@@ -810,6 +812,7 @@ levelup SPECIES_PERSIAN
     learnset MOVE_TAUNT, 25
     learnset MOVE_POWER_GEM, 32
     learnset MOVE_SLASH, 37
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_NASTY_PLOT, 44
     learnset MOVE_ASSURANCE, 49
     learnset MOVE_CAPTIVATE, 56
@@ -2096,8 +2099,8 @@ levelup SPECIES_MAGIKARP
     terminatelearnset
 
 levelup SPECIES_GYARADOS
+    learnset MOVE_BITE, 0
     learnset MOVE_THRASH, 1
-    learnset MOVE_BITE, 20
     learnset MOVE_DRAGON_RAGE, 23
     learnset MOVE_LEER, 26
     learnset MOVE_TWISTER, 29
@@ -2105,6 +2108,7 @@ levelup SPECIES_GYARADOS
     learnset MOVE_AQUA_TAIL, 35
     learnset MOVE_RAIN_DANCE, 38
     learnset MOVE_HYDRO_PUMP, 41
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_DRAGON_DANCE, 44
     learnset MOVE_HYPER_BEAM, 47
     terminatelearnset
@@ -2240,6 +2244,7 @@ levelup SPECIES_OMASTAR
     learnset MOVE_PROTECT, 34
     learnset MOVE_ANCIENT_POWER, 37
     learnset MOVE_SPIKE_CANNON, 40
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_TICKLE, 48
     learnset MOVE_ROCK_BLAST, 56
     learnset MOVE_HYDRO_PUMP, 67
@@ -2776,6 +2781,7 @@ levelup SPECIES_CROBAT
     learnset MOVE_AIR_CUTTER, 27
     learnset MOVE_MEAN_LOOK, 33
     learnset MOVE_POISON_FANG, 39
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_HAZE, 45
     learnset MOVE_AIR_SLASH, 51
     terminatelearnset
