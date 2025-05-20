@@ -4322,14 +4322,14 @@ trainerdata 129, "Shane"
         ivs 0
         abilityslot 0
         level 22
-        pokemon SPECIES_NIDORINA
+        pokemon SPECIES_FLAAFFY
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
         level 22
-        pokemon SPECIES_NIDORINO
+        pokemon SPECIES_CUBONE
         ballseal 0
     endparty
 
@@ -4371,14 +4371,14 @@ trainerdata 131, "Brent"
         ivs 0
         abilityslot 0
         level 24
-        pokemon SPECIES_NIDORINA
+        pokemon SPECIES_LICKITUNG
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
         level 24
-        pokemon SPECIES_NIDORINO
+        pokemon SPECIES_MAGIKARP
         ballseal 0
     endparty
 
@@ -4400,6 +4400,13 @@ trainerdata 132, "Ron"
         abilityslot 32
         level 22
         pokemon SPECIES_NIDOKING
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 22
+        pokemon SPECIES_NIDOQUEEN
         ballseal 0
     endparty
 
