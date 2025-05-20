@@ -659,7 +659,7 @@ trainerdata 20, "Falkner"
         move MOVE_HYPNOSIS
         move MOVE_ROOST
         move MOVE_PECK
-        move MOVE_UPROAR
+        move MOVE_TACKLE
         ballseal 0
     endparty
 
