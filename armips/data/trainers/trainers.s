@@ -13764,7 +13764,6 @@ trainerdata 401, "Alfred"
         pokemon SPECIES_NOCTOWL
         ballseal 0
 
-    party 401
         // mon 1
         ivs 0
         abilityslot 0
