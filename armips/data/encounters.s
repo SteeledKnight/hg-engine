@@ -5944,7 +5944,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 15, 15, 15, 15, 17, 17, 15, 15, 16, 17, 16, 17
+walklevels 19, 19, 19, 19, 21, 21, 19, 19, 20, 21, 20, 21
 
 // morning encounter slots
 pokemon SPECIES_FLAAFFY
@@ -6256,7 +6256,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 24, 25, 24, 25, 25, 25, 26, 26, 25, 25, 25, 25
+walklevels 26, 27, 26, 27, 27, 27, 28, 28, 27, 27, 27, 27
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6360,7 +6360,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 24, 25, 24, 25, 25, 25, 26, 26, 25, 25, 25, 25
+walklevels 26, 27, 26, 27, 27, 27, 28, 28, 27, 27, 27, 27
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6464,7 +6464,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 25, 26, 25, 26, 26, 26, 27, 27, 26, 26, 26, 26
+walklevels 26, 27, 26, 27, 27, 27, 28, 28, 27, 27, 27, 27
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
@@ -6568,7 +6568,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 25, 26, 25, 26, 26, 26, 27, 27, 26, 26, 26, 26
+walklevels 26, 27, 26, 27, 27, 27, 28, 28, 27, 27, 27, 27
 
 // morning encounter slots
 pokemon SPECIES_SWINUB
