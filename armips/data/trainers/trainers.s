@@ -657,9 +657,9 @@ trainerdata 20, "Falkner"
         pokemon SPECIES_NOCTOWL
         item ITEM_ORAN_BERRY
         move MOVE_HYPNOSIS
-        move MOVE_ROOST
-        move MOVE_PECK
         move MOVE_MUD_SLAP
+        move MOVE_PECK
+        move MOVE_NONE
         ballseal 0
     endparty
 
@@ -981,7 +981,7 @@ trainerdata 30, "Whitney"
         level 21
         pokemon SPECIES_MILTANK
         item ITEM_LUM_BERRY
-        move MOVE_ROLLOUT
+        move MOVE_BIDE
         move MOVE_ATTRACT
         move MOVE_STOMP
         move MOVE_MILK_DRINK

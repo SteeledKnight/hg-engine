@@ -783,7 +783,7 @@ movedata MOVE_SUPERSONIC, "Supersonic"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 55
+    accuracy 70
     pp 20
     effectchance 0
     target RANGE_SINGLE_TARGET
