@@ -2928,7 +2928,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 13, 14, 13, 14, 15, 15, 14, 14, 16, 15, 16, 15
+walklevels 15, 16, 15, 16, 18, 18, 16, 16, 17, 17, 17, 17
 
 // morning encounter slots
 pokemon SPECIES_RATTATA
@@ -3032,7 +3032,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 14, 14, 14, 14, 16, 16, 16, 16, 15, 14, 15, 14
+walklevels 15, 16, 15, 16, 18, 18, 16, 16, 17, 17, 17, 17
 
 // morning encounter slots
 pokemon SPECIES_RATTATA
@@ -3968,7 +3968,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 16, 16, 16, 16, 16, 16, 16, 16, 13, 13, 13, 13
+walklevels 18, 18, 18, 18, 19, 19, 19, 19, 20, 20, 20, 20
 
 // morning encounter slots
 pokemon SPECIES_RATTATA
@@ -4072,7 +4072,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 16, 17, 16, 17, 16, 16, 16, 16, 15, 15, 15, 15
+walklevels 18, 18, 18, 18, 19, 19, 19, 19, 20, 20, 20, 20
 
 // morning encounter slots
 pokemon SPECIES_RATTATA
@@ -5424,33 +5424,33 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 15, 13, 15, 13, 14, 14, 16, 16, 15, 17, 15, 17
+walklevels 20, 21, 20, 21, 20, 20, 20, 20, 22, 22, 22, 22
 
 // morning encounter slots
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 pokemon SPECIES_EKANS
-pokemon SPECIES_SPEAROW
+pokemon SPECIES_MANKEY
 pokemon SPECIES_GEODUDE
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 pokemon SPECIES_EKANS
 
 // day encounter slots
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 pokemon SPECIES_EKANS
-pokemon SPECIES_SPEAROW
+pokemon SPECIES_MANKEY
 pokemon SPECIES_GEODUDE
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 pokemon SPECIES_EKANS
 
@@ -5458,14 +5458,14 @@ pokemon SPECIES_EKANS
 pokemon SPECIES_ZUBAT
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 pokemon SPECIES_EKANS
-pokemon SPECIES_SPEAROW
+pokemon SPECIES_MANKEY
 pokemon SPECIES_GEODUDE
 pokemon SPECIES_SPEAROW
 pokemon SPECIES_POLIWAG
-pokemon SPECIES_MARILL
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_GLIGAR
 
 // hoenn encounter slots
@@ -5944,7 +5944,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 19, 19, 19, 19, 21, 21, 19, 19, 20, 21, 20, 21
+walklevels 24, 24, 24, 24, 25, 25, 24, 24, 25, 26, 25, 26
 
 // morning encounter slots
 pokemon SPECIES_FLAAFFY
@@ -6152,7 +6152,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 23, 22, 23, 22, 22, 22, 24, 24, 24, 26, 24, 26
+walklevels 24, 24, 24, 25, 25, 25, 26, 26, 26, 28, 26, 28
 
 // morning encounter slots
 pokemon SPECIES_TANGELA
@@ -7192,7 +7192,7 @@ rocksmashrate 50
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 3, 2, 3, 2, 2, 2, 4, 4, 3, 4, 3, 4
+walklevels 5, 6, 5, 6, 5, 5, 7, 7, 5, 6, 5, 6
 
 // morning encounter slots
 pokemon SPECIES_GEODUDE

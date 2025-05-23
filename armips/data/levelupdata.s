@@ -919,7 +919,7 @@ levelup SPECIES_ARCANINE
 
 levelup SPECIES_POLIWAG
     learnset MOVE_WATER_SPORT, 1
-    learnset MOVE_BUBBLE, 5
+    learnset MOVE_BUBBLE, 1
     learnset MOVE_HYPNOSIS, 8
     learnset MOVE_WATER_GUN, 11
     learnset MOVE_DOUBLE_SLAP, 15
@@ -2942,8 +2942,6 @@ levelup SPECIES_FLAAFFY
     learnset MOVE_TACKLE, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_THUNDER_SHOCK, 1
-    learnset MOVE_GROWL, 5
-    learnset MOVE_THUNDER_SHOCK, 10
     learnset MOVE_THUNDER_WAVE, 14
     learnset MOVE_COTTON_SPORE, 20
     learnset MOVE_CHARGE, 25

@@ -1529,7 +1529,7 @@ trainerdata 44, "Derek"
         // mon 1
         ivs 0
         abilityslot 0
-        level 18
+        level 24
         pokemon SPECIES_PIKACHU
         move MOVE_DOUBLE_TEAM
         move MOVE_QUICK_ATTACK
@@ -1565,7 +1565,7 @@ trainerdata 45, "Ruth"
         // mon 1
         ivs 0
         abilityslot 0
-        level 18
+        level 24
         pokemon SPECIES_CLEFAIRY
         move MOVE_DOUBLE_SLAP
         move MOVE_DEFENSE_CURL
@@ -2391,7 +2391,7 @@ trainerdata 73, "Theo"
         ivs 50
         abilityslot 0
         level 19
-        pokemon SPECIES_PIDGEY
+        pokemon SPECIES_PIDGEOTTO
         ballseal 0
 
         // mon 1
@@ -2405,21 +2405,21 @@ trainerdata 73, "Theo"
         ivs 50
         abilityslot 0
         level 21
-        pokemon SPECIES_PIDGEY
+        pokemon SPECIES_PIDGEOTTO
         ballseal 0
 
         // mon 3
         ivs 50
         abilityslot 32
         level 18
-        pokemon SPECIES_PIDGEY
+        pokemon SPECIES_FARFETCHD
         ballseal 0
 
         // mon 4
         ivs 50
         abilityslot 0
         level 20
-        pokemon SPECIES_PIDGEY
+        pokemon SPECIES_FARFETCHD
         ballseal 0
     endparty
 
@@ -13240,21 +13240,21 @@ trainerdata 383, "Peter"
         // mon 0
         ivs 50
         abilityslot 0
-        level 6
+        level 8
         pokemon SPECIES_PIDGEY
         ballseal 0
 
         // mon 1
         ivs 50
         abilityslot 32
-        level 6
+        level 8
         pokemon SPECIES_PIDGEY
         ballseal 0
 
         // mon 2
         ivs 50
         abilityslot 0
-        level 8
+        level 10
         pokemon SPECIES_SPEAROW
         ballseal 0
     endparty
@@ -16617,14 +16617,14 @@ trainerdata 486, "Proton"
         // mon 0
         ivs 100
         abilityslot 0
-        level 8
+        level 12
         pokemon SPECIES_ZUBAT
         ballseal 0
 
         // mon 1
         ivs 100
         abilityslot 0
-        level 12
+        level 14
         pokemon SPECIES_KOFFING
         ballseal 0
     endparty
@@ -18696,14 +18696,14 @@ trainerdata 537, "Harrison"
         // mon 0
         ivs 0
         abilityslot 32
-        level 17
+        level 21
         pokemon SPECIES_NIDOKING
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 17
+        level 21
         pokemon SPECIES_NIDOQUEEN
         ballseal 0
     endparty
