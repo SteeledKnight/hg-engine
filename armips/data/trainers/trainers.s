@@ -284,7 +284,7 @@ trainerdata 9, "Elaine"
         // mon 0
         ivs 0
         abilityslot 32
-        level 2
+        level 23
         pokemon SPECIES_STARYU
         ballseal 0
 

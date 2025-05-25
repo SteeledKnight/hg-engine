@@ -4333,9 +4333,9 @@ pokemon SPECIES_NONE
 pokemon SPECIES_NONE
 
 // surf encounters
-encounter SPECIES_TENTACOOL, 15, 25
+encounter SPECIES_TENTACOOL, 15, 20
 encounter SPECIES_REMORAID, 10, 20
-encounter SPECIES_SHELLDER, 15, 25
+encounter SPECIES_SHELLDER, 15, 20
 encounter SPECIES_MANTINE, 15, 25
 encounter SPECIES_MANTINE, 15, 25
 
@@ -4437,9 +4437,9 @@ pokemon SPECIES_NONE
 pokemon SPECIES_NONE
 
 // surf encounters
-encounter SPECIES_REMORAID, 15, 25
+encounter SPECIES_REMORAID, 15, 20
 encounter SPECIES_SHELLDER, 10, 20
-encounter SPECIES_MANTINE, 15, 25
+encounter SPECIES_MANTINE, 15, 20
 encounter SPECIES_HORSEA, 15, 25
 encounter SPECIES_MANTINE, 15, 25
 
@@ -4541,9 +4541,9 @@ pokemon SPECIES_BRONZOR
 pokemon SPECIES_CHINGLING
 
 // surf encounters
-encounter SPECIES_TENTACOOL, 15, 25
+encounter SPECIES_TENTACOOL, 15, 20
 encounter SPECIES_HORSEA, 10, 20
-encounter SPECIES_TENTACRUEL, 15, 25
+encounter SPECIES_TENTACRUEL, 15, 20
 encounter SPECIES_TENTACRUEL, 15, 25
 encounter SPECIES_TENTACRUEL, 15, 25
 
