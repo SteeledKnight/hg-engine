@@ -3758,12 +3758,12 @@ levelup SPECIES_HOUNDOOM
     learnset MOVE_ROAR, 14
     learnset MOVE_BITE, 17
     learnset MOVE_ODOR_SLEUTH, 22
+    learnset MOVE_FIRE_FANG, 25
     learnset MOVE_BEAT_UP, 28
-    learnset MOVE_FIRE_FANG, 32
+    learnset MOVE_FLAMETHROWER, 33
     learnset MOVE_FEINT_ATTACK, 38
+    learnset MOVE_CRUNCH, 42
     learnset MOVE_EMBARGO, 44
-    learnset MOVE_FLAMETHROWER, 48
-    learnset MOVE_CRUNCH, 54
     learnset MOVE_NASTY_PLOT, 60
     terminatelearnset
 
