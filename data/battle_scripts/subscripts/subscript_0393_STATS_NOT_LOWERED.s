@@ -6,8 +6,8 @@ _000:
     PrintAttackMessage
     Wait
     WaitButtonABTime 30
-    // {0}’s stats were not lowered!
-    PrintMessage 1499, TAG_NICKNAME, BATTLER_CATEGORY_MSG_TEMP
+    // {0}’s {1} prevents stat loss!
+    PrintMessage 669, TAG_NICKNAME_ABILITY, BATTLER_CATEGORY_SIDE_EFFECT_MON, BATTLER_CATEGORY_SIDE_EFFECT_MON
     Wait
     WaitButtonABTime 30
     End

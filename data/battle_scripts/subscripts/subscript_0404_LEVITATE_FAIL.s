@@ -6,8 +6,8 @@ _000:
     PrintAttackMessage 
     Wait 
     WaitButtonABTime 30
-    // It doesn’t affect {0}...
-    PrintMessage 27, TAG_NICKNAME, BATTLER_CATEGORY_MSG_TEMP
+    // {0} makes Ground moves miss by using {1}!
+    PrintMessage 21, TAG_NICKNAME_ABILITY, BATTLER_CATEGORY_DEFENDER, BATTLER_CATEGORY_DEFENDER
     Wait 
     WaitButtonABTime 30
     // now handle high jump kick
