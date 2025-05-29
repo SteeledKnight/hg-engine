@@ -6,8 +6,8 @@ _000:
     PrintAttackMessage
     Wait
     WaitButtonABTime 30
-    // {0}’s Defense was not lowered!
-    PrintMessage 1505, TAG_NICKNAME, BATTLER_CATEGORY_MSG_TEMP
+    // {0}’s {1} prevents {2} loss!
+    PrintMessage 704, TAG_NICKNAME_ABILITY_STAT, BATTLER_CATEGORY_SIDE_EFFECT_MON, BATTLER_CATEGORY_SIDE_EFFECT_MON, BATTLER_CATEGORY_MSG_TEMP
     Wait
     WaitButtonABTime 30
     End
