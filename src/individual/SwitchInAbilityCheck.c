@@ -113,7 +113,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                 if (i == client_set_max) {
                     sp->switch_in_check_seq_no++;
                 }
-            } 
+            }
                 break;
             case SWITCH_IN_CHECK_ENTRY_EFFECT_UNNERVE: {
                 for (i = 0; i < client_set_max; i++) {
@@ -147,7 +147,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
             case SWITCH_IN_CHECK_ENTRY_EFFECT_HEALING_WISH: {
                 for (i = 0; i < client_set_max; i++) {
                     client_no = sp->turnOrder[i];
-                    
+
                     // Heal from Healing Wish, Lunar Dance, Z-Memento, or Z-Parting Shot if applicable
                     {
 
@@ -168,13 +168,13 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                 for (i = 0; i < client_set_max; i++) {
                     client_no = sp->turnOrder[i];
 
-                    
+
                     // Entry hazards
                     {
 
                     }
 
-                    
+
                     // Need to trigger script
                     if (ret == SWITCH_IN_CHECK_MOVE_SCRIPT) {
                         break;
@@ -187,7 +187,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
             }
                 break;
             case SWITCH_IN_CHECK_ENTRY_EFFECT_ABILITIES_AIR_BALLOON: {
-                for (i = 0; i < client_set_max; i++) {      
+                for (i = 0; i < client_set_max; i++) {
                     client_no = sp->turnOrder[i];
 
                     // Abilities with entry effects can announce, except Neutralizing Gas/Unnerve (earlier) and form-changing abilities (later)
@@ -201,8 +201,13 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
 
                         sp->defence_client_work = TraceClientGet(bw, sp, def1, def2);
 
-                        if ((sp->battlemon[client_no].ability_activated_flag == 0) && (sp->defence_client_work != 0xFF) && (sp->battlemon[client_no].hp) && (sp->battlemon[client_no].item != ITEM_GRISEOUS_ORB) && (sp->battlemon[sp->defence_client_work].hp) && (GetBattlerAbility(sp, client_no) == ABILITY_TRACE)) {
-                            sp->battlemon[client_no].ability_activated_flag = 1;
+                        if ((sp->battlemon[client_no].ability_activated_flag == 0)
+                            && (sp->defence_client_work != 0xFF)
+                            && (sp->battlemon[client_no].hp)
+                            && (sp->battlemon[client_no].item != ITEM_GRISEOUS_ORB)
+                            && (sp->battlemon[sp->defence_client_work].hp)
+                            && (GetBattlerAbility(sp, client_no) == ABILITY_TRACE))
+                        {
                             sp->battlerIdTemp = client_no;
                             scriptnum = SUB_SEQ_TRACE;
                             ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
@@ -594,7 +599,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                             src = (u8 *)&sp->battlemon[sp->attack_client];
                             dest = (u8 *)&sp->battlemon[sp->defence_client];
 
-                            for (num = 0; num <= (int)offsetof(struct BattlePokemon, ability); num++) {
+                            for (num = 0; num <= (int)0x26/*offsetof(struct BattlePokemon, ability)*/; num++) {
                                 src[num] = dest[num];
                             }
 
@@ -663,13 +668,13 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                         && (sp->battlemon[client_no].hp)
                         && (GetBattlerAbility(sp, client_no) == ABILITY_INTREPID_SWORD)) {
                             sp->onceOnlyAbilityFlags[SanitizeClientForTeamAccess(bw, client_no)][sp->sel_mons_no[client_no]].intrepidSwordFlag = TRUE;
-                            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_ATTACK_UP;                        
+                            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_ATTACK_UP;
                             sp->addeffect_type = ADD_STATUS_ABILITY;
                             sp->state_client = client_no;
                             scriptnum = SUB_SEQ_BOOST_STATS;
                             ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
                             break;
-                            }
+                        }
                     }
 
                     // Dauntless Shield
@@ -678,15 +683,55 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                         && (sp->battlemon[client_no].hp)
                         && (GetBattlerAbility(sp, client_no) == ABILITY_DAUNTLESS_SHIELD)) {
                             sp->onceOnlyAbilityFlags[SanitizeClientForTeamAccess(bw, client_no)][sp->sel_mons_no[client_no]].dauntlessShieldFlag = TRUE;
-                            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_DEFENSE_UP;                        
+                            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_DEFENSE_UP;
                             sp->addeffect_type = ADD_STATUS_ABILITY;
                             sp->state_client = client_no;
                             scriptnum = SUB_SEQ_BOOST_STATS;
                             ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
                             break;
-                            }
+                        }
                     }
 
+                    // TODO:  was not sure where to add these
+                    // Wind Power - charge the mon when tailwind activates/on switch in if tailwind is active
+                    //     - post-move effect handled in MoveHitDefenderAbilityCheck
+                    //     - ability_activated_flag is reset when tailwind runs out for these abilities in ServerFieldConditionCheck
+                    {
+                        if ((sp->battlemon[client_no].hp)
+                        // tailwind is active -- should catch if tailwind was just used as well
+                        && (sp->tailwindCount[IsClientEnemy(bw, client_no)] != 0)
+                        && (GetBattlerAbility(sp, client_no) == ABILITY_WIND_POWER)
+                        && (sp->battlemon[client_no].ability_activated_flag == 0))
+                        {
+                            sp->battlemon[client_no].ability_activated_flag = TRUE; // make sure to reset when clearing tailwind
+                            sp->battlerIdTemp = client_no;
+                            sp->waza_work = sp->current_move_index;
+                            scriptnum = SUB_SEQ_HANDLE_CHARGE_BOOST;
+                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                            break;
+                        }
+                    }
+
+                    // TODO:  was not sure where to add these
+                    // Wind Rider - speed the mon up when tailwind activates/on switch in if tailwind is active
+                    //     - ability_activated_flag is reset when tailwind runs out for these abilities in ServerFieldConditionCheck
+                    {
+                        if ((sp->battlemon[client_no].hp)
+                        // tailwind is active -- should catch if tailwind was just used as well
+                        && (sp->tailwindCount[IsClientEnemy(bw, client_no)] != 0)
+                        && (GetBattlerAbility(sp, client_no) == ABILITY_WIND_RIDER)
+                        && (sp->battlemon[client_no].ability_activated_flag == 0)) {
+                            sp->battlemon[client_no].ability_activated_flag = TRUE; // make sure to reset when clearing tailwind
+                            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_ATTACK_UP;
+                            sp->addeffect_type = ADD_STATUS_ABILITY;
+                            sp->state_client = client_no;
+                            sp->battlerIdTemp = client_no;
+                            sp->current_move_index = MOVE_TAILWIND;
+                            scriptnum = SUB_SEQ_BOOST_STATS;
+                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                            break;
+                        }
+                    }
 
                     // Air Balloon is announced
                     // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-9227933
@@ -740,6 +785,19 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                         if (IS_ITEM_TERRAIN_SEED(heldItem) && TerrainSeedShouldActivate(sp, heldItem)) {
                             sp->state_client = client_no;
                             scriptnum = SUB_SEQ_HANDLE_TERRAIN_SEEDS;
+                            ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
+                            break;
+                        }
+                    }
+
+                    // Room Service
+                    {
+                        u16 heldItem;
+
+                        heldItem = GetBattleMonItem(sp, client_no);
+                        if (heldItem == ITEM_ROOM_SERVICE && sp->field_condition & FIELD_STATUS_TRICK_ROOM) {
+                            sp->state_client = client_no;
+                            scriptnum = SUB_SEQ_HANDLE_ROOM_SERVICE;
                             ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
                             break;
                         }
@@ -815,7 +873,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
 
                     // Costar
                     {
-                        
+
                     }
 
                     // Commander
@@ -860,7 +918,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
 
                     // Opportunist
                     {
-                        
+
                     }
 
                     // Need to trigger script
@@ -903,7 +961,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                     sp->switch_in_check_seq_no++;
                 }
             }
-                break;    
+                break;
             case SWITCH_IN_CHECK_END:
                 sp->switch_in_check_seq_no = 0;
                 ret = SWITCH_IN_CHECK_CHECK_END;

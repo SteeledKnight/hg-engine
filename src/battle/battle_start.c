@@ -50,8 +50,15 @@ struct BattleStruct *ServerInit(struct BattleSystem *bw) {
 
     sp->original_terrain = bw->terrain;
     sp->original_bgId = bw->bgId;
+    bw->sp = sp;
+    BattleBgExpansionLoader(bw);
 
     gBattleSystem = bw;
+
+#ifdef DEBUG_BATTLE_SCENARIOS
+    // Apply test battle state (recharge, charging, etc.)
+    TestBattle_ApplyBattleState(bw, sp);
+#endif
 
     return sp;
 }
@@ -82,9 +89,9 @@ void ServerBeforeAct(struct BattleSystem *bsys, struct BattleStruct *ctx) {
             UnloadOverlayByID(18);
         }
 
-#ifdef DEBUG_BEFORE_MOVE_LOGIC
-        debug_printf("Load OVERLAY_SERVERBEFOREACT\n");
-#endif
+//#ifdef DEBUG_BEFORE_MOVE_LOGIC
+//        debug_printf("Load OVERLAY_SERVERBEFOREACT\n");
+//#endif
 
         HandleLoadOverlay(ovyId, 2);
     }
@@ -95,9 +102,9 @@ void ServerBeforeAct(struct BattleSystem *bsys, struct BattleStruct *ctx) {
     {
         if (ServerBeforeAct_restoreOverlay) {
             UnloadOverlayByID(ovyId);
-#ifdef DEBUG_BEFORE_MOVE_LOGIC
-            debug_printf("Restoring overlay %d...\n", (ServerBeforeAct_restoreOverlay == 1 ? 0 : ServerBeforeAct_restoreOverlay));
-#endif
+//#ifdef DEBUG_BEFORE_MOVE_LOGIC
+//            debug_printf("Restoring overlay %d...\n", (ServerBeforeAct_restoreOverlay == 1 ? 0 : ServerBeforeAct_restoreOverlay));
+//#endif
             HandleLoadOverlay((ServerBeforeAct_restoreOverlay == 1 ? OVERLAY_WIFI : ServerBeforeAct_restoreOverlay), 2);
         }
     }
@@ -109,34 +116,6 @@ void ServerBeforeAct(struct BattleSystem *bsys, struct BattleStruct *ctx) {
 //                                                技能使用前判断
 /********************************************************************************************************************/
 /********************************************************************************************************************/
-
-enum {
-    SEQ_MEGA_CHECK = 0,
-    SEQ_SENSEI_CHECK,
-    SEQ_STATUS_CHECK,
-    SEQ_BADGE_CHECK,
-    SEQ_PP_CHECK,
-    SEQ_DEFENCE_CHECK,
-    SEQ_WAZAKOYUU_CHECK,
-    SEQ_DEFENCE_CHANGE_CHECK,
-    SEQ_PROTEAN_CHECK,
-    SEQ_STANCE_CHANGE_CHECK,
-    SEQ_PARENTAL_BOND_CHECK,
-};
-
-enum ObedienceCheckResult {
-    OBEY_CHECK_SUCCESS = 0,
-    OBEY_CHECK_DO_NOTHING,
-    OBEY_CHECK_DIFFERENT_MOVE,
-    OBEY_CHECK_HIT_SELF
-};
-
-enum {
-    CHECK_STATUS_LOOP_BACK = 0,
-    CHECK_STATUS_DISRUPT_MOVE, // wholly disrupt the move; attacker does not get a turn
-    CHECK_STATUS_GO_TO_SCRIPT, // execute a given script, then proceed with the chosen move
-    CHECK_STATUS_DONE,
-};
 
 // 08014ACC
 
@@ -150,9 +129,9 @@ enum {
 u32 ServerWazaBefore_restoreOverlay = 0;
 
 void ServerWazaBefore(void *bw, struct BattleStruct *sp) {
-#ifdef DEBUG_BEFORE_MOVE_LOGIC
-    debug_printf("In BattleController_BeforeMove landing pad\n");
-#endif
+//#ifdef DEBUG_BEFORE_MOVE_LOGIC
+//    debug_printf("In BattleController_BeforeMove landing pad\n");
+//#endif
     u32 ovyId, offset;
 
     void (*internalFunc)(void *bw, struct BattleStruct *sp);
@@ -168,9 +147,9 @@ void ServerWazaBefore(void *bw, struct BattleStruct *sp) {
             UnloadOverlayByID(OVERLAY_POKEDEX);
         }
 
-#ifdef DEBUG_BEFORE_MOVE_LOGIC
-        debug_printf("Load OVERLAY_BATTLECONTROLLER_BEFOREMOVE\n");
-#endif
+//#ifdef DEBUG_BEFORE_MOVE_LOGIC
+//        debug_printf("Load OVERLAY_BATTLECONTROLLER_BEFOREMOVE\n");
+//#endif
         ovyId = OVERLAY_BATTLECONTROLLER_BEFOREMOVE;
 
         //offset = 0x023C0400 | 1;
@@ -187,9 +166,9 @@ void ServerWazaBefore(void *bw, struct BattleStruct *sp) {
         // needs to unload regardless of if it took OVERLAY_POKEDEX space
         UnloadOverlayByID(ovyId);
         if (ServerWazaBefore_restoreOverlay) {
-#ifdef DEBUG_BEFORE_MOVE_LOGIC
-            debug_printf("Restoring overlay %d...\n", (ServerWazaBefore_restoreOverlay == 1 ? 0 : ServerWazaBefore_restoreOverlay));
-#endif
+//#ifdef DEBUG_BEFORE_MOVE_LOGIC
+//            debug_printf("Restoring overlay %d...\n", (ServerWazaBefore_restoreOverlay == 1 ? 0 : ServerWazaBefore_restoreOverlay));
+//#endif
             HandleLoadOverlay((ServerWazaBefore_restoreOverlay == 1 ? OVERLAY_WIFI : ServerWazaBefore_restoreOverlay), 2);
             ServerWazaBefore_restoreOverlay = FALSE;
         }

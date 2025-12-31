@@ -367,7 +367,7 @@ void LONG_CALL AddHallOfFameEntry(FieldSystem *fieldSystem, BOOL gameCleared);
  *
  *  @param saveData saveData from SaveBlock2_get()
  */
-Daycare *Save_Daycare_Get(void *saveData);
+Daycare * LONG_CALL Save_Daycare_Get(void *saveData);
 
 
 // grab var data from the save -> pass in SavArray_Flags_get for both flags/vars
@@ -412,5 +412,6 @@ BOOL LONG_CALL CheckScriptFlag(u16 flag_id);
  *  @return TRUE if the element exists verbatim inside of the array; FALSE otherwise
  */
 BOOL LONG_CALL IsElementInArray(const void *array, void *element, u32 len, u32 size);
+BOOL LONG_CALL PlayerProfile_TestBadgeFlag(struct PlayerProfile *profile, s32 badgeNumber);
 
 #endif // SAVE_H

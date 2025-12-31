@@ -203,9 +203,11 @@ typedef struct {
     /* 0x00 */ u16 species;
     /* 0x02 */ u16 heldItem;
     /* 0x04 */ u32 otID; // low 16: visible; high 16: secret
-    /* 0x08 */ u32 exp;
+    /* 0x08 */ u32 exp:21; // low 21 are all that is used!
+               u32 unused:10;
+               u32 abilityMSB:1; // msb of previous experience field is the exp
     /* 0x0C */ u8 friendship;
-    /* 0x0D */ u8 ability;
+    /* 0x0D */ u8 ability; // taking a bit from exp
     /* 0x0E */ u8 markings; // circle, triangle, square, heart, star, diamond
     /* 0x0F */ u8 originLanguage;
     /* 0x10 */ u8 hpEV;
@@ -541,6 +543,62 @@ struct OVERWORLD_TAG
     u16 callback_params;
 };
 
+typedef struct MAP_EVENTS MAP_EVENTS;
+typedef struct FIELD_PLAYER_AVATAR FIELD_PLAYER_AVATAR;
+typedef struct LocalMapObject LocalMapObject;
+
+typedef struct Location {
+    int mapId;
+    int warpId;
+    int x;
+    int z;
+    int direction;
+} Location;
+
+typedef struct FollowMon {
+    LocalMapObject *mapObject;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 species;
+    u8 gender;
+    u8 unk15;
+    u8 active;
+    u8 shiny;
+    u16 forme;
+    u16 dummy;
+    u32 unk1C;
+} FollowMon;
+
+typedef struct FieldSystem {
+    /*  0x0 */ u8 unk0[0x8];
+    /*  0x8 */ void *bg_config;
+    /*  0xc */ void *savedata;//SAVEDATA* savedata;
+    /* 0x10 */ void *taskman;//TaskManager* taskman;
+    /* 0x14 */ MAP_EVENTS* map_events; // what we are here for
+    /* 0x18 */ u8 unk18[0x8];
+    /* 0x20 */ Location * location;
+    /* 0x24 */ u8 unk24[0xC];
+    /* 0x30 */ void */*MAPMATRIX**/ map_matrix;
+    /* 0x34 */ u8 unk34[0x8];
+    /* 0x3C */ void */*MapObjectMan**/ mapObjectMan;
+    /* 0x40 */ FIELD_PLAYER_AVATAR *playerAvatar;
+    /* 0x44 */ u8 unk44[0x8];
+    /* 0x4C */ void * fog_data;
+    /* 0x50 */ u8 unk50[0x5C];
+    /* 0xAC */ u32 unkAC;
+    /* 0xB0 */ u8 unkB0[0x4];
+    /* 0xB4 */ s64 unkB4;
+    /* 0xBC */ u8 unkBC[0x28];
+    /* 0xE4 */ FollowMon followMon;
+    //u8 unk104[4];
+    //void *unk108;//struct FieldSystemUnk108 *unk108;
+    //u8 filler_10C[8];
+    //void *unk114;//struct UnkFsysSub_114* unk114;
+    //void *bugContest;//BUGCONTEST* bugContest;
+    //u8 unk11C[0xC];
+} FieldSystem; // size: 0x128
+
 
 // frick new formes
 struct PLIST_DATA
@@ -552,7 +610,7 @@ struct PLIST_DATA
     /* 0x10 */ void *tvwk;
     /* 0x14 */ void *reg;
     /* 0x18 */ void *scwk;
-    /* 0x1C */ void *fsys;
+    /* 0x1C */ FieldSystem *fsys;
                void *padsmth;
     /* 0x20+4 */ u8 mode;
     /* 0x21+4 */ u8 type;
@@ -601,6 +659,16 @@ struct PLIST_WORK
     /* 0x660 */ void* /*Sprite **/ sprites[_PARTY_MENU_SPRITE_ID_MAX]; // 0x660
     /* 0x6D4 */ u8 padding_x6D4[0xC65-0x660-0x74];
     u8 pos;
+};
+
+struct IconFormChangeData {
+    int state;
+    int effectTimer;
+    int duration;
+    int species;
+    int fileId;
+    int partyMonIndex;
+    void *particleSystem; // SPLEmitter from pokeheartgold
 };
 
 
@@ -762,8 +830,6 @@ enum
 
 
 #define gDimorphismTable ((u8 *)(0x020FECAE))
-#define EGG_MOVES_PER_MON 16 // need to go through later and make this editable
-#define NUM_EGG_MOVES_TOTAL 8000
 
 
 /**Trainer Data File Bitfield**/
@@ -787,9 +853,8 @@ enum
 #define TRAINER_DATA_EXTRA_TYPE_SPEED 0x10
 #define TRAINER_DATA_EXTRA_TYPE_SP_ATK 0x20
 #define TRAINER_DATA_EXTRA_TYPE_SP_DEF 0x40
-#define TRAINER_DATA_EXTRA_TYPE_TYPES 0x80
-#define TRAINER_DATA_EXTRA_TYPE_PP_COUNTS 0x100
-#define TRAINER_DATA_EXTRA_TYPE_NICKNAME 0x200
+#define TRAINER_DATA_EXTRA_TYPE_PP_COUNTS 0x80
+#define TRAINER_DATA_EXTRA_TYPE_NICKNAME 0x100
 
 // kinda weird, specifically tracked in the RAM
 typedef struct WildEncounterWork
@@ -1028,13 +1093,6 @@ u8 LONG_CALL GetNatureFromPersonality(u32 personality);
 u8 LONG_CALL GetMonNature(struct PartyPokemon *pp);
 
 /**
- *  @brief intialize a BoxPokemon's moves depending on level and such that are already set
- *
- *  @param boxmon BoxPokemon whose moves to initialize
- */
-void LONG_CALL FillInBoxMonLearnset(struct BoxPokemon *boxmon);
-
-/**
  *  @brief get data from personal narc for a species
  *
  *  @param species species index to grab from the narc for
@@ -1066,14 +1124,6 @@ void LONG_CALL BoxMonInit(struct BoxPokemon *boxmon);
  *  @param bp BoxPokemon to check for a form change
  */
 void LONG_CALL GiratinaBoxPokemonFormChange(struct BoxPokemon *bp);
-
-/**
- *  @brief check if the gracidea flower can be used on a PartyPokemon
- *
- *  @param pp PartyPokemon to check for gracidea validity
- *  @return TRUE if the gracidea can be used on the PartyPokemon
- */
-BOOL LONG_CALL GrashideaFeasibleCheck(struct PartyPokemon *pp);
 
 /**
  *  @brief load in the party overlay
@@ -1123,6 +1173,15 @@ u32 LONG_CALL PokeParaLevelExpGet(struct PartyPokemon *pp);
  *  @return TRUE if the PartyPokemon should level up; FALSE otherwise
  */
 u32 LONG_CALL PokeLevelUpCheck(struct PartyPokemon *pp);
+
+/**
+ *  @brief grab the level of a species given its experience
+ *
+ *  @param species species index to calculate for
+ *  @param exp total experience the species has
+ *  @return level the species is at with given experience
+ */
+u32 LONG_CALL CalcLevelBySpeciesAndExp(u32 species, u32 exp);
 
 /**
  *  @brief check if a Party has a specific species
@@ -1664,7 +1723,7 @@ BOOL LONG_CALL Party_UpdateDeerlingSeasonForm(struct Party *party);
 //BOOL LONG_CALL Party_TryResetShaymin(struct Party *party, int min_max, const struct RTCTime *time);
 
 /**
- *  @brief load egg moves to dest and return amount of egg moves
+ *  @brief load egg moves to dest and return amount of egg moves. reads from data/generated/EggLearnsets.c
  *
  *  @param pokemon PartyPokemon to grab egg moves for
  *  @param dest destination for the array of egg moves
@@ -1773,6 +1832,21 @@ bool8 LONG_CALL RevertFormChange(struct PartyPokemon *pp, u16 species, u8 form_n
 void LONG_CALL ClearMonMoves(struct PartyPokemon *pokemon);
 
 /**
+ *  @brief get level cap from the script variable defined by LEVEL_CAP_VARIABLE
+ *
+ *  @return level cap from LEVEL_CAP_VARIABLE script variable
+ */
+u32 LONG_CALL GetLevelCap(void);
+
+/**
+ *  @brief check if the level is at or above the level cap defined in LEVEL_CAP_VARIABLE
+ *
+ *  @param level level to check
+ *  @return TRUE if level >= level cap; FALSE otherwise
+ */
+u32 LONG_CALL IsLevelAtLevelCap(u32 level);
+
+/**
  *  @brief grab the nature of a BoxPokemon factoring in the nature mint override field
  *
  *  @param boxMon BoxPokemon whose nature to grab
@@ -1816,23 +1890,14 @@ void LONG_CALL Daycare_GetBothBoxMonsPtr(Daycare *dayCare, struct BoxPokemon **b
 
 BOOL LONG_CALL CanUseItemOnPokemon(struct PartyPokemon *mon, u16 itemID, s32 moveIdx, u32 heapID);
 
-/**
- *  @brief get level cap from the script variable defined by LEVEL_CAP_VARIABLE
- *
- *  @return level cap from LEVEL_CAP_VARIABLE script variable
- */
-u32 LONG_CALL GetLevelCap(void);
-
-/**
- *  @brief check if the level is at or above the level cap defined in LEVEL_CAP_VARIABLE
- *
- *  @param level level to check
- *  @return TRUE if level >= level cap; FALSE otherwise
- */
-u32 LONG_CALL IsLevelAtLevelCap(u32 level);
-
 void LONG_CALL correct_zacian_zamazenta_kyurem_moves_for_form(struct PartyPokemon *param, unsigned int expected_form, int *a3);
 
 void LONG_CALL ChangeToBattleForm(struct PartyPokemon *pp);
+
+void LONG_CALL MonApplyFriendshipMod(struct PartyPokemon *mon, u8 kind, u16 location);
+
+u8 LONG_CALL GetMoveMaxPP(u16 moveId, u8 ppUps);
+
+void LONG_CALL ApplyMonMoodModifier(struct PartyPokemon *mon, int modifierId);
 
 #endif
